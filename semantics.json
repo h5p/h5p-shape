@@ -1,0 +1,56 @@
+[
+  {
+    "name": "type",
+    "type": "select",
+    "label": "Type",
+    "importance": "low",
+    "default": "rectangle",
+    "options": [
+      {
+        "value": "rectangle",
+        "label": "Rectangle"
+      },
+      {
+        "value": "roundedRectangle",
+        "label": "Rounded rectangle"
+      },
+      {
+        "value": "circle",
+        "label": "Circle"
+      },
+      {
+        "value": "verticalLine",
+        "label": "Vertical line"
+      },
+      {
+        "value": "horizontalLine",
+        "label": "Horizontal line"
+      }
+    ]
+  },
+  {
+    "name": "lineStyle",
+    "type": "select",
+    "label": "Line style",
+    "importance": "low",
+    "default": "solid",
+    "options": [
+      {
+        "value": "solid",
+        "label": "Solid"
+      },
+      {
+        "value": "dotted",
+        "label": "Dotted"
+      },
+      {
+        "value": "dashed",
+        "label": "Dashed"
+      },
+      {
+        "value": "double",
+        "label": "Double"
+      }
+    ]
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "title": "Shape",
+  "description": "Makes it possible to create different shapes.",
+  "majorVersion": 1,
+  "minorVersion": 0,
+  "patchVersion": 0,
+  "runnable": 1,
+  "author": "Joubel",
+  "license": "MIT",
+  "machineName": "H5P.Shape",
+  "embedTypes": [
+    "iframe"
+  ],
+  "preloadedCss": [
+    {
+      "path": "css/shape.css"
+    }
+  ],
+  "preloadedJs": [
+    {
+      "path": "js/shape.js"
+    }
+  ],
+  "preloadedDependencies": [
+  ],
+  "editorDependencies": [
+  ]
+}
