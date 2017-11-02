@@ -52,6 +52,10 @@ H5P.Shape = (function ($) {
     if (this.params.type == "rounded-rectangle") {
       this.$shape.css('border-radius', this.params.lineRadius + '%');
     }
+
+    if (this.params.type == "vertical-line" || this.params.type == "horizontal-line") {
+      this.$shape.css('background-color', this.params.lineColor);
+    }
   };
 
   return C;
