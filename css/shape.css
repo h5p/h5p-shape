@@ -2,13 +2,46 @@
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  background-color: white;
-  border: 1px solid black;
 }
 
+/* Shapes */
 .h5p-shape-element.h5p-shape-rectangle {
 }
 
 .h5p-shape-element.h5p-shape-circle {
   border-radius: 50%;
+}
+
+.h5p-shape-element.h5p-shape-horizontal-line {
+  height: 0;
+}
+
+.h5p-shape-element.h5p-shape-vertical-line {
+}
+
+/* Border styles */
+.h5p-shape-element.h5p-border-solid {
+  border-style: solid;
+}
+
+.h5p-shape-element.h5p-border-dotted {
+  border-style: dotted;
+}
+
+.h5p-shape-element.h5p-border-dashed {
+  border-style: dashed;
+}
+
+.h5p-shape-element.h5p-border-double {
+  border-style: double;
+}
+
+/* Stand alone, mostly useful for testing */
+.h5p-standalone.h5p-shape {
+  width: 6.25em;
+  min-height: 6.25em;
+}
+
+.h5p-standalone.h5p-shape .h5p-shape-element {
+  position: absolute;
 }

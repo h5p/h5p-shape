@@ -17,12 +17,10 @@ H5P.Shape = (function ($) {
     var self = this;
     H5P.EventDispatcher.call(this);
 
-    self.contentId = self.id = id;
-
     // Set default behavior.
-    self.params = $.extend({
-      
-    }, params);
+    self.params = $.extend({}, params);
+
+    self.contentId = self.id = id;
   }
 
   C.prototype = Object.create(H5P.EventDispatcher.prototype);
@@ -34,15 +32,26 @@ H5P.Shape = (function ($) {
    * @param {jQuery} $container
    */
   C.prototype.attach = function ($container) {
-    var self = this;
+    this.$inner = $container.addClass('h5p-shape');
+    this.$shape = $('<div class="h5p-shape-element h5p-shape-' + this.params.type.replace(/([A-Z])/g, "-$1").toLowerCase() + '"></div>');
+    this.styleShape();
+    this.$shape.appendTo(this.$inner);
+  };
 
-console.log(self.params);
+  /**
+   * Style the shape
+   */
+  C.prototype.styleShape = function () {
+    this.$shape.css({
+      'background-color': this.params.fillColor,
+      'border-style': this.params.lineStyle,
+      'border-color': this.params.lineColor,
+      'border-width': this.params.lineWeight,
+    });
 
-    self.$inner = $container
-      .addClass('h5p-shape')
-      .append($(
-        '<div class="h5p-shape-element h5p-shape-' + self.params.type + '"></div>'
-      ));
+    if (this.params.type == "roundedRectangle") {
+      this.$shape.css('border-radius', this.params.lineRadius);
+    }
   };
 
   return C;
