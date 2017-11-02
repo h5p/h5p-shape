@@ -33,7 +33,7 @@ H5P.Shape = (function ($) {
    */
   C.prototype.attach = function ($container) {
     this.$inner = $container.addClass('h5p-shape');
-    this.$shape = $('<div class="h5p-shape-element h5p-shape-' + this.params.type.replace(/([A-Z])/g, "-$1").toLowerCase() + '"></div>');
+    this.$shape = $('<div class="h5p-shape-element h5p-shape-' + this.params.type + '"></div>');
     this.styleShape();
     this.$shape.appendTo(this.$inner);
   };
@@ -46,11 +46,11 @@ H5P.Shape = (function ($) {
       'background-color': this.params.fillColor,
       'border-style': this.params.lineStyle,
       'border-color': this.params.lineColor,
-      'border-width': this.params.lineWeight,
+      'border-width': (this.params.lineWeight * 0.0835) + 'em'
     });
 
-    if (this.params.type == "roundedRectangle") {
-      this.$shape.css('border-radius', this.params.lineRadius);
+    if (this.params.type == "rounded-rectangle") {
+      this.$shape.css('border-radius', this.params.lineRadius + '%');
     }
   };
 

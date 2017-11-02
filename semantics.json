@@ -11,7 +11,7 @@
         "label": "Rectangle"
       },
       {
-        "value": "roundedRectangle",
+        "value": "rounded-rectangle",
         "label": "Rounded rectangle"
       },
       {
@@ -19,11 +19,11 @@
         "label": "Circle"
       },
       {
-        "value": "verticalLine",
+        "value": "vertical-line",
         "label": "Vertical line"
       },
       {
-        "value": "horizontalLine",
+        "value": "horizontal-line",
         "label": "Horizontal line"
       }
     ]
@@ -204,15 +204,18 @@
   {
     "name": "lineRadius",
     "type": "number",
-    "label": "Line radius in %",
+    "label": "Line radius",
+    "description": "Line radius in percent, between 0-50",
     "importance": "low",
     "default": 10,
+    "min": 0,
+    "max": 50,
     "widget": "showWhen",
     "showWhen": {
       "rules": [
         {
           "field": "type",
-          "equals": "roundedRectangle"
+          "equals": "rounded-rectangle"
         }
       ]
     }
