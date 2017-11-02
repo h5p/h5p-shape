@@ -12,13 +12,6 @@
   border-radius: 50%;
 }
 
-.h5p-shape-element.h5p-shape-horizontal-line {
-  height: 0;
-}
-
-.h5p-shape-element.h5p-shape-vertical-line {
-}
-
 /* Border styles */
 .h5p-shape-element.h5p-border-solid {
   border-style: solid;
@@ -38,10 +31,26 @@
 
 /* Stand alone, mostly useful for testing */
 .h5p-standalone.h5p-shape {
-  width: 6.25em;
-  min-height: 6.25em;
+  width: auto;
+  min-height: 30em;
 }
 
 .h5p-standalone.h5p-shape .h5p-shape-element {
   position: absolute;
+}
+
+.h5p-standalone.h5p-shape .h5p-shape-element.h5p-shape-rounded-rectangle,
+.h5p-standalone.h5p-shape .h5p-shape-element.h5p-shape-rectangle,
+.h5p-standalone.h5p-shape .h5p-shape-element.h5p-shape-circle {
+  width: 6.25em;
+}
+
+.h5p-standalone.h5p-shape .h5p-shape-element.h5p-shape-horizontal-line {
+  width: 15em;
+  height: 0;
+}
+
+.h5p-standalone.h5p-shape .h5p-shape-element.h5p-shape-vertical-line {
+  width: 0;
+  height: 15em;
 }
