@@ -16,11 +16,8 @@ H5P.Shape = (function ($) {
   function C(params, id) {
     var self = this;
     H5P.EventDispatcher.call(this);
-
-    // Set default behavior.
-    self.params = $.extend({}, params);
-
-    self.contentId = self.id = id;
+    self.params = params;
+    self.contentId = id;
   }
 
   C.prototype = Object.create(H5P.EventDispatcher.prototype);
