@@ -12,6 +12,19 @@
   border-radius: 50%;
 }
 
+.h5p-shape-element.h5p-shape-horizontal-line {
+  height: 0;
+  margin: auto 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.h5p-shape-element.h5p-shape-vertical-line {
+  width: 0;
+  margin: 0 auto;
+}
+
 /* Border styles */
 .h5p-shape-element.h5p-border-solid {
   border-style: solid;
