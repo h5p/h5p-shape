@@ -13,12 +13,12 @@
   ],
   "preloadedCss": [
     {
-      "path": "css/shape.css"
+      "path": "css/h5p-shape.css"
     }
   ],
   "preloadedJs": [
     {
-      "path": "js/shape.js"
+      "path": "js/h5p-shape.js"
     }
   ],
   "editorDependencies": [
