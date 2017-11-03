@@ -21,8 +21,6 @@
       "path": "js/shape.js"
     }
   ],
-  "preloadedDependencies": [
-  ],
   "editorDependencies": [
     {
       "machineName": "H5PEditor.ColorSelector",
