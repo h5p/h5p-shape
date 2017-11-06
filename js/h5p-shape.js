@@ -39,20 +39,23 @@ H5P.Shape = (function ($) {
    * Style the shape
    */
   C.prototype.styleShape = function () {
-    this.$shape.css({
-      'background-color': this.params.fillColor,
-      'border-style': this.params.lineStyle,
-      'border-color': this.params.lineColor,
-      'border-width': (this.params.lineWeight * 0.0835) + 'em'
-    });
-
-    if (this.params.type == "rounded-rectangle") {
-      this.$shape.css('border-radius', this.params.lineRadius + '%');
-    }
+    var css = {};
+    var emSize = 0.0835;
 
     if (this.params.type == "vertical-line" || this.params.type == "horizontal-line") {
-      this.$shape.css('background-color', this.params.lineColor);
+      css['background-color'] = this.params.lineColor;
+    } else {
+      css['background-color'] = this.params.fillColor;
+      css['border-style'] = this.params.lineStyle;
+      css['border-color'] = this.params.lineColor;
+      css['border-width'] = (this.params.lineWeight * emSize) + 'em';
     }
+
+    if (this.params.type == "rounded-rectangle") {
+      css['border-radius'] = this.params.lineRadius * 0.25 + 'em';
+    }
+
+    this.$shape.css(css);
   };
 
   return C;
