@@ -39,7 +39,8 @@
     "showAplha": true,
     "spectrum": {
       "showInput": true,
-      "showAlpha": true
+      "showAlpha": true,
+      "preferredFormat": "rgb"
     }
   },
   {
@@ -52,7 +53,8 @@
     "widget": "colorSelector",
     "spectrum": {
       "showInput": true,
-      "showAlpha": true
+      "showAlpha": true,
+      "preferredFormat": "rgb"
     }
   },
   {
