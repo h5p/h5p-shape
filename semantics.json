@@ -211,7 +211,6 @@
     "name": "lineRadius",
     "type": "select",
     "label": "Line radius",
-    "description": "Line radius in percent, between 0-50",
     "importance": "low",
     "default": "1",
     "options": [
