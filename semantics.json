@@ -11,10 +11,6 @@
         "label": "Rectangle"
       },
       {
-        "value": "rounded-rectangle",
-        "label": "Rounded rectangle"
-      },
-      {
         "value": "circle",
         "label": "Circle"
       },
@@ -46,24 +42,40 @@
   {
     "name": "lineColor",
     "type": "text",
-    "label": "Line color",
+    "label": "Border color",
     "importance": "medium",
     "optional": true,
     "default": "#000000",
-    "widget": "colorSelector",
-    "spectrum": {
-      "showInput": true,
-      "showAlpha": true,
-      "preferredFormat": "rgb"
+    "widget": "showWhen",
+    "showWhen": {
+      "rules": [
+        {
+          "field": "type",
+          "equals": [
+            "rectangle",
+            "circle"
+          ]
+        }
+      ],
+      "widget": "colorSelector",
+      "spectrum": {
+        "showInput": true,
+        "showAlpha": true,
+        "preferredFormat": "rgb"
+      }
     }
   },
   {
     "name": "lineWeight",
     "type": "select",
-    "label": "Line weight",
+    "label": "Border width",
     "importance": "low",
     "default": "1",
     "options": [
+      {
+        "value": "0",
+        "label": "0"
+      },
       {
         "value": "1",
         "label": "1"
@@ -165,14 +177,10 @@
   {
     "name": "lineStyle",
     "type": "select",
-    "label": "Line style",
+    "label": "Border style",
     "importance": "low",
     "default": "solid",
     "options": [
-      {
-        "value": "none",
-        "label": "None"
-      },
       {
         "value": "solid",
         "label": "Solid"
@@ -190,14 +198,6 @@
         "label": "Double"
       },
       {
-        "value": "groove",
-        "label": "Groove"
-      },
-      {
-        "value": "ridge",
-        "label": "Ridge"
-      },
-      {
         "value": "inset",
         "label": "Inset"
       },
@@ -210,7 +210,7 @@
   {
     "name": "lineRadius",
     "type": "select",
-    "label": "Line radius",
+    "label": "Border radius",
     "importance": "low",
     "default": "1",
     "options": [
@@ -300,7 +300,7 @@
       "rules": [
         {
           "field": "type",
-          "equals": "rounded-rectangle"
+          "equals": "rectangle"
         }
       ]
     }
