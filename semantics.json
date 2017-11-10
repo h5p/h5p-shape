@@ -4,7 +4,8 @@
     "type": "select",
     "label": "Type",
     "importance": "low",
-    "default": "rectangle",
+    "widget": "radioGroup",
+    "alignment": "horizontal",
     "options": [
       {
         "value": "rectangle",
@@ -22,7 +23,8 @@
         "value": "horizontal-line",
         "label": "Horizontal line"
       }
-    ]
+    ],
+    "default": "rectangle"
   },
   {
     "name": "fillColor",
