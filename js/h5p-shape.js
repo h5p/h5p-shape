@@ -42,23 +42,23 @@ H5P.Shape = (function ($) {
     var css = {};
     var emSize = 0.0835;
 
-    css['background-color'] = this.params.fillColor;
-
     if (this.params.type == "vertical-line") {
-      css['width'] = (this.params.lineWeight >= 1 ? this.params.lineWeight * emSize + 'em' : emSize + 'em');
+      css['border-left'] = (this.params.lineWeight >= 1 ? this.params.lineWeight * emSize + 'em' : emSize + 'em') + " " + this.params.lineStyle;
     }
     else if (this.params.type == "horizontal-line") {
-      css['height'] = (this.params.lineWeight >= 1 ? this.params.lineWeight * emSize + 'em' : emSize + 'em');
+      css['border-top'] = (this.params.lineWeight >= 1 ? this.params.lineWeight * emSize + 'em' : emSize + 'em') + " " + this.params.lineStyle;
     }
     else {
-      css['border-style'] = this.params.lineStyle;
-      css['border-color'] = this.params.lineColor;
+      css['background-color'] = this.params.fillColor;
       css['border-width'] = this.params.lineWeight * emSize + 'em';
+      css['border-style'] = this.params.lineStyle;
     }
 
     if (this.params.type == "rounded-rectangle") {
       css['border-radius'] = this.params.lineRadius * 0.25 + 'em';
     }
+
+    css['border-color'] = this.params.lineColor;
 
     this.$shape.css(css);
   };

@@ -48,6 +48,11 @@
     "importance": "medium",
     "optional": true,
     "default": "#000000",
+    "spectrum": {
+      "showInput": true,
+      "showAlpha": true,
+      "preferredFormat": "rgb"
+    },
     "widget": "showWhen",
     "showWhen": {
       "rules": [
@@ -59,12 +64,7 @@
           ]
         }
       ],
-      "widget": "colorSelector",
-      "spectrum": {
-        "showInput": true,
-        "showAlpha": true,
-        "preferredFormat": "rgb"
-      }
+      "widget": "colorSelector"
     }
   },
   {
