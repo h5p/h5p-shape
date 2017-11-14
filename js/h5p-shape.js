@@ -44,9 +44,11 @@ H5P.Shape = (function ($) {
 
     if (this.params.type == "vertical-line") {
       css['border-left'] = (this.params.lineWeight >= 1 ? this.params.lineWeight * emSize + 'em' : emSize + 'em') + " " + this.params.lineStyle;
+      this.$inner.parent().parent().css('width', this.params.lineWeight * emSize + 'em');
     }
     else if (this.params.type == "horizontal-line") {
       css['border-top'] = (this.params.lineWeight >= 1 ? this.params.lineWeight * emSize + 'em' : emSize + 'em') + " " + this.params.lineStyle;
+      this.$inner.parent().parent().css('height', this.params.lineWeight * emSize + 'em');
     }
     else {
       css['background-color'] = this.params.fillColor;
