@@ -54,7 +54,7 @@ H5P.Shape = (function ($) {
       css['border-style'] = this.params.lineStyle;
     }
 
-    if (this.params.type == "rounded-rectangle") {
+    if (this.params.type == "rectangle") {
       css['border-radius'] = this.params.lineRadius * 0.25 + 'em';
     }
 

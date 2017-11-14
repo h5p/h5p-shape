@@ -38,7 +38,7 @@
     "spectrum": {
       "showInput": true,
       "showAlpha": true,
-      "preferredFormat": "hex"
+      "preferredFormat": "rgb"
     }
   },
   {
@@ -51,7 +51,7 @@
     "spectrum": {
       "showInput": true,
       "showAlpha": true,
-      "preferredFormat": "hex"
+      "preferredFormat": "rgb"
     },
     "widget": "showWhen",
     "showWhen": {
