@@ -52,7 +52,7 @@ H5P.Shape = (function ($) {
     }
     else {
       css['background-color'] = this.params.fillColor;
-      css['border-width'] = this.params.lineWeight * emSize + 'em';
+      css['border-width'] = this.params.lineWeight * emSize + 'em';
       css['border-style'] = this.params.lineStyle;
     }
 
