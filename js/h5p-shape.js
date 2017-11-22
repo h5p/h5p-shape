@@ -44,23 +44,24 @@ H5P.Shape = (function ($) {
 
     if (this.params.type == "vertical-line") {
       css['border-left'] = (this.params.lineWeight >= 1 ? this.params.lineWeight * emSize + 'em' : emSize + 'em') + " " + this.params.lineStyle;
+      css['border-color'] = this.params.lineColor;
       this.$inner.parent().parent().css('width', this.params.lineWeight * emSize + 'em');
     }
     else if (this.params.type == "horizontal-line") {
       css['border-top'] = (this.params.lineWeight >= 1 ? this.params.lineWeight * emSize + 'em' : emSize + 'em') + " " + this.params.lineStyle;
+      css['border-color'] = this.params.lineColor;
       this.$inner.parent().parent().css('height', this.params.lineWeight * emSize + 'em');
     }
     else {
       css['background-color'] = this.params.fillColor;
       css['border-width'] = this.params.lineWeight * emSize + 'em';
       css['border-style'] = this.params.lineStyle;
+      css['border-color'] = this.params.borderColor;
     }
 
     if (this.params.type == "rectangle") {
       css['border-radius'] = this.params.lineRadius * 0.25 + 'em';
     }
-
-    css['border-color'] = this.params.lineColor;
 
     this.$shape.css(css);
   };

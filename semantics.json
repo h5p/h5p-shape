@@ -33,16 +33,56 @@
     "importance": "medium",
     "optional": true,
     "default": "#ffffff",
+    "widget": "showWhen",
+    "showAplha": true,
+    "spectrum": {
+      "showInput": true,
+      "showAlpha": true,
+      "preferredFormat": "rgb"
+    },
+    "showWhen": {
+      "rules": [
+        {
+          "field": "type",
+          "equals": [
+            "rectangle",
+            "circle"
+          ]
+        }
+      ],
+      "widget": "colorSelector"
+    }
+  },
+  {
+    "name": "lineColor",
+    "type": "text",
+    "label": "Line color",
+    "importance": "medium",
+    "optional": true,
+    "default": "#ffffff",
     "widget": "colorSelector",
     "showAplha": true,
     "spectrum": {
       "showInput": true,
       "showAlpha": true,
       "preferredFormat": "rgb"
+    },
+    "widget": "showWhen",
+    "showWhen": {
+      "rules": [
+        {
+          "field": "type",
+          "equals": [
+            "horizontal-line",
+            "vertical-line"
+          ]
+        }
+      ],
+      "widget": "colorSelector"
     }
   },
   {
-    "name": "lineColor",
+    "name": "borderColor",
     "type": "text",
     "label": "Border color",
     "importance": "medium",
