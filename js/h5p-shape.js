@@ -14,10 +14,18 @@ H5P.Shape = (function ($) {
    * @returns {C} self
    */
   function C(params, id) {
-    var self = this;
     H5P.EventDispatcher.call(this);
-    self.params = params;
-    self.contentId = id;
+    this.params = $.extend(true, {
+      type: 'rectangel',
+      shape: {
+        fillColor: '#ccc',
+        borderWidth: 1,
+        borderStyle: 'solid',
+        borderColor: '#000',
+        borderRadius: 0
+      }
+    }, params);
+    this.contentId = id;
   }
 
   C.prototype = Object.create(H5P.EventDispatcher.prototype);
@@ -36,31 +44,42 @@ H5P.Shape = (function ($) {
   };
 
   /**
+   * Is this a line?
+   * @return {boolean}
+   */
+  C.prototype.isLine = function () {
+    return this.params.type === 'vertical-line' ||
+           this.params.type === 'horizontal-line';
+  };
+
+  /**
    * Style the shape
    */
   C.prototype.styleShape = function () {
-    var css = {};
-    var emSize = 0.0835;
+    var props = this.isLine() ? this.params.line : this.params.shape;
+    var borderWidth = (props.borderWidth * 0.0835) + 'em';
+    var css = {
+      'border-color': props.borderColor
+    };
 
     if (this.params.type == "vertical-line") {
-      css['border-left'] = (this.params.lineWeight >= 1 ? this.params.lineWeight * emSize + 'em' : emSize + 'em') + " " + this.params.lineStyle;
-      css['border-color'] = this.params.lineColor;
-      this.$inner.parent().parent().css('width', this.params.lineWeight * emSize + 'em');
+      css['border-left-width'] = borderWidth;
+      css['border-left-style'] = props.borderStyle;
+      this.trigger('set-size', {width: borderWidth});
     }
     else if (this.params.type == "horizontal-line") {
-      css['border-top'] = (this.params.lineWeight >= 1 ? this.params.lineWeight * emSize + 'em' : emSize + 'em') + " " + this.params.lineStyle;
-      css['border-color'] = this.params.lineColor;
-      this.$inner.parent().parent().css('height', this.params.lineWeight * emSize + 'em');
+      css['border-top-width'] = borderWidth;
+      css['border-top-style'] = props.borderStyle;
+      this.trigger('set-size', {height: borderWidth});
     }
     else {
-      css['background-color'] = this.params.fillColor;
-      css['border-width'] = this.params.lineWeight * emSize + 'em';
-      css['border-style'] = this.params.lineStyle;
-      css['border-color'] = this.params.borderColor;
+      css['background-color'] = props.fillColor;
+      css['border-width'] = borderWidth;
+      css['border-style'] = props.borderStyle;
     }
 
     if (this.params.type == "rectangle") {
-      css['border-radius'] = this.params.lineRadius * 0.25 + 'em';
+      css['border-radius'] = props.borderRadius * 0.25 + 'em';
     }
 
     this.$shape.css(css);
