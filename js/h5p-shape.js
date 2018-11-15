@@ -16,7 +16,7 @@ H5P.Shape = (function ($) {
   function C(params, id) {
     H5P.EventDispatcher.call(this);
     this.params = $.extend(true, {
-      type: 'rectangel',
+      type: 'rectangle',
       shape: {
         fillColor: '#ccc',
         borderWidth: 1,
