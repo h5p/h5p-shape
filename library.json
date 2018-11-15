@@ -8,6 +8,10 @@
   "author": "Joubel",
   "license": "MIT",
   "machineName": "H5P.Shape",
+  "metadataSettings": {
+    "disable": 1,
+    "disableExtraTitleField": 1
+  },
   "embedTypes": [
     "iframe"
   ],
