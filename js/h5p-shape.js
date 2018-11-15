@@ -65,12 +65,12 @@ H5P.Shape = (function ($) {
     if (this.params.type == "vertical-line") {
       css['border-left-width'] = borderWidth;
       css['border-left-style'] = props.borderStyle;
-      this.trigger('set-size', {width: borderWidth});
+      this.trigger('set-size', {width: borderWidth, maxWidth: borderWidth});
     }
     else if (this.params.type == "horizontal-line") {
       css['border-top-width'] = borderWidth;
       css['border-top-style'] = props.borderStyle;
-      this.trigger('set-size', {height: borderWidth});
+      this.trigger('set-size', {height: borderWidth, maxHeight: borderWidth});
     }
     else {
       css['background-color'] = props.fillColor;
