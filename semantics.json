@@ -79,8 +79,8 @@
         "type": "select",
         "label": "Border width",
         "importance": "low",
-        "default": "1",
-        "optional": true,
+        "default": "0",
+        "optional": false,
         "options": [
           {
             "value": "0",
@@ -190,7 +190,7 @@
         "label": "Border style",
         "importance": "low",
         "default": "solid",
-        "optional": true,
+        "optional": false,
         "options": [
           {
             "value": "solid",
@@ -224,7 +224,7 @@
         "label": "Border radius",
         "importance": "low",
         "default": "0",
-        "optional": true,
+        "optional": false,
         "options": [
           {
             "value": "0",
@@ -361,12 +361,8 @@
         "label": "Line width",
         "importance": "low",
         "default": "1",
-        "optional": true,
+        "optional": false,
         "options": [
-          {
-            "value": "0",
-            "label": "0"
-          },
           {
             "value": "1",
             "label": "1"
@@ -471,7 +467,7 @@
         "label": "Line style",
         "importance": "low",
         "default": "solid",
-        "optional": true,
+        "optional": false,
         "options": [
           {
             "value": "solid",

@@ -19,7 +19,7 @@ H5P.Shape = (function ($) {
       type: 'rectangle',
       shape: {
         fillColor: '#ccc',
-        borderWidth: 1,
+        borderWidth: 0,
         borderStyle: 'solid',
         borderColor: '#000',
         borderRadius: 0
