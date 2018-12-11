@@ -484,14 +484,6 @@
           {
             "value": "double",
             "label": "Double"
-          },
-          {
-            "value": "inset",
-            "label": "Inset"
-          },
-          {
-            "value": "outset",
-            "label": "Outset"
           }
         ]
       }
