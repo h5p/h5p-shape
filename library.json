@@ -12,9 +12,6 @@
     "disable": 1,
     "disableExtraTitleField": 1
   },
-  "embedTypes": [
-    "iframe"
-  ],
   "preloadedCss": [
     {
       "path": "css/h5p-shape.css"
