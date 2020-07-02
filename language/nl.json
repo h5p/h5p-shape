@@ -1,0 +1,87 @@
+{
+  "semantics": [
+    {
+      "label": "Type",
+      "options": [
+        {
+          "label": "Rechthoek"
+        },
+        {
+          "label": "Cirkel"
+        },
+        {
+          "label": "Verticale lijn"
+        },
+        {
+          "label": "Horizontale lijn"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "label": "Opvulkleur"
+        },
+        {
+          "label": "Randkleur"
+        },
+        {
+          "label": "Randdikte"
+        },
+        {
+          "label": "Randstijl",
+          "options": [
+            {
+              "label": "Solid"
+            },
+            {
+              "label": "Puntjes"
+            },
+            {
+              "label": "Streepjes"
+            },
+            {
+              "label": "Dubbel"
+            },
+            {
+              "label": "Inset"
+            },
+            {
+              "label": "Outset"
+            }
+          ]
+        },
+        {
+          "label": "Border radius"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "label": "Lijnkleur"
+        },
+        {
+          "label": "Lijndikte"
+        },
+        {
+          "label": "Lijnstijl",
+          "options": [
+            {
+              "label": "Solid"
+            },
+            {
+              "label": "Puntjes"
+            },
+            {
+              "label": "Streepjes"
+            },
+            {
+              "label": "Dubbel"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
