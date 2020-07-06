@@ -32,7 +32,7 @@
           "label": "Randstijl",
           "options": [
             {
-              "label": "Solid"
+              "label": "Solide"
             },
             {
               "label": "Puntjes"
@@ -52,7 +52,7 @@
           ]
         },
         {
-          "label": "Border radius"
+          "label": "Rand afronding"
         }
       ]
     },
@@ -68,7 +68,7 @@
           "label": "Lijnstijl",
           "options": [
             {
-              "label": "Solid"
+              "label": "Solide"
             },
             {
               "label": "Puntjes"
