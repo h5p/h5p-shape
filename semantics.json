@@ -16,15 +16,302 @@
         "label": "Circle"
       },
       {
+        "value": "triangle",
+        "label": "Triangle"
+      },
+      {
+        "value": "pentagon",
+        "label": "Pentagon"
+      },
+      {
+        "value": "hexagon",
+        "label": "Hexagon"
+      },
+      {
+        "value": "cube",
+        "label": "Cube"
+      },
+      {
+        "value": "cylinder",
+        "label": "Cylinder"
+      },
+      {
+        "value": "cone",
+        "label": "Cone"
+      },
+      {
         "value": "vertical-line",
         "label": "Vertical line"
       },
       {
         "value": "horizontal-line",
         "label": "Horizontal line"
+      },
+      {
+        "value": "long-arrow-right",
+        "label": "Arrow-right"
+      },
+      {
+        "value": "long-arrow-left",
+        "label": "Arrow-left"
+      },
+      {
+        "value": "long-arrow-up",
+        "label": "Arrow-up"
+      },
+      {
+        "value": "long-arrow-down",
+        "label": "Arrow-down"
+      },
+      {
+        "value": "arrows-alt-h",
+        "label": "Arrows left and right"
+      },
+      {
+        "value": "arrows-alt-v",
+        "label": "Arrows up and down"
+      },
+      {
+        "value": "arrows-alt",
+        "label": "Arrows"
       }
     ],
     "default": "rectangle"
+  },
+  {
+    "type": "group",
+    "name": "svg3d",
+    "widget": "showWhen",
+    "expanded": true,
+    "showWhen": {
+      "rules": [
+        {
+          "field": "type",
+          "equals": [
+            "cylinder",
+            "cube",
+            "cone"
+          ]
+        }
+      ]
+    },
+    "fields": [
+      {
+        "name": "borderColor",
+        "type": "text",
+        "label": "Border color",
+        "importance": "medium",
+        "optional": true,
+        "default": "#ffffff",
+        "widget": "colorSelector",
+        "showAplha": true,
+        "spectrum": {
+          "showInput": true,
+          "showAlpha": true,
+          "preferredFormat": "rgb"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "svg",
+    "widget": "showWhen",
+    "expanded": true,
+    "showWhen": {
+      "rules": [
+        {
+          "field": "type",
+          "equals": [
+            "long-arrow-right",
+            "long-arrow-left",
+            "long-arrow-up",
+            "long-arrow-down",
+            "arrows-alt-h",
+            "arrows-alt-v",
+            "arrows-alt"
+          ]
+        }
+      ]
+    },
+    "fields": [
+      {
+        "name": "fillColor",
+        "type": "text",
+        "label": "Fill color",
+        "importance": "medium",
+        "optional": true,
+        "default": "#ffffff",
+        "widget": "colorSelector",
+        "showAplha": true,
+        "spectrum": {
+          "showInput": true,
+          "showAlpha": true,
+          "preferredFormat": "rgb"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "svgpolygon",
+    "widget": "showWhen",
+    "expanded": true,
+    "showWhen": {
+      "rules": [
+        {
+          "field": "type",
+          "equals": [
+            "triangle",
+            "pentagon",
+            "hexagon"
+          ]
+        }
+      ]
+    },
+    "fields": [
+      {
+        "name": "fillColor",
+        "type": "text",
+        "label": "Fill color",
+        "importance": "medium",
+        "optional": true,
+        "default": "white",
+        "widget": "colorSelector",
+        "showAplha": true,
+        "spectrum": {
+          "showInput": true,
+          "showAlpha": true,
+          "preferredFormat": "rgb"
+        }
+      },
+      {
+        "name": "borderColor",
+        "type": "text",
+        "label": "Border color",
+        "importance": "medium",
+        "optional": true,
+        "default": "white",
+        "widget": "colorSelector",
+        "spectrum": {
+          "showInput": true,
+          "showAlpha": true,
+          "preferredFormat": "rgb"
+        }
+      },
+      {
+        "name": "borderWidth",
+        "type": "select",
+        "label": "Border width",
+        "importance": "low",
+        "default": "0",
+        "optional": false,
+        "options": [
+          {
+            "value": "0",
+            "label": "0"
+          },
+          {
+            "value": "1",
+            "label": "1"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "5",
+            "label": "5"
+          },
+          {
+            "value": "6",
+            "label": "6"
+          },
+          {
+            "value": "7",
+            "label": "7"
+          },
+          {
+            "value": "8",
+            "label": "8"
+          },
+          {
+            "value": "9",
+            "label": "9"
+          },
+          {
+            "value": "10",
+            "label": "10"
+          },
+          {
+            "value": "11",
+            "label": "11"
+          },
+          {
+            "value": "12",
+            "label": "12"
+          },
+          {
+            "value": "13",
+            "label": "13"
+          },
+          {
+            "value": "14",
+            "label": "14"
+          },
+          {
+            "value": "15",
+            "label": "15"
+          },
+          {
+            "value": "16",
+            "label": "16"
+          },
+          {
+            "value": "17",
+            "label": "17"
+          },
+          {
+            "value": "18",
+            "label": "18"
+          },
+          {
+            "value": "19",
+            "label": "19"
+          },
+          {
+            "value": "20",
+            "label": "20"
+          }
+        ]
+      },
+      {
+        "name": "borderStyle",
+        "type": "select",
+        "label": "Border style",
+        "importance": "low",
+        "default": "solid",
+        "optional": false,
+        "options": [
+          {
+            "value": "solid",
+            "label": "Solid"
+          },
+          {
+            "value": "dashed",
+            "label": "Dashed"
+          }
+        ]
+      }
+    ]
   },
   {
     "type": "group",
@@ -56,8 +343,7 @@
           "showInput": true,
           "showAlpha": true,
           "preferredFormat": "rgb"
-        },
-        "optional": true
+        }
       },
       {
         "name": "borderColor",
@@ -71,8 +357,7 @@
           "showInput": true,
           "showAlpha": true,
           "preferredFormat": "rgb"
-        },
-        "optional": true
+        }
       },
       {
         "name": "borderWidth",
@@ -348,7 +633,6 @@
         "optional": true,
         "default": "#000000",
         "widget": "colorSelector",
-        "optional": true,
         "spectrum": {
           "showInput": true,
           "showAlpha": true,
