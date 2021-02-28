@@ -97,6 +97,21 @@
     },
     "fields": [
       {
+        "name": "fillColor",
+        "type": "text",
+        "label": "Fill color",
+        "importance": "medium",
+        "optional": true,
+        "default": "#ffffff",
+        "widget": "colorSelector",
+        "showAplha": true,
+        "spectrum": {
+          "showInput": true,
+          "showAlpha": true,
+          "preferredFormat": "rgb"
+        }
+      },
+      {
         "name": "borderColor",
         "type": "text",
         "label": "Border color",
