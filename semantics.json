@@ -117,7 +117,7 @@
         "label": "Border color",
         "importance": "medium",
         "optional": true,
-        "default": "#ffffff",
+        "default": "#000000",
         "widget": "colorSelector",
         "showAplha": true,
         "spectrum": {
@@ -206,7 +206,7 @@
         "label": "Border color",
         "importance": "medium",
         "optional": true,
-        "default": "white",
+        "default": "#000000",
         "widget": "colorSelector",
         "spectrum": {
           "showInput": true,
