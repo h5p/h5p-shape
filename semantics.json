@@ -104,7 +104,7 @@
         "optional": true,
         "default": "#ffffff",
         "widget": "colorSelector",
-        "showAplha": true,
+        "showAlpha": true,
         "spectrum": {
           "showInput": true,
           "showAlpha": true,
@@ -119,7 +119,7 @@
         "optional": true,
         "default": "#000000",
         "widget": "colorSelector",
-        "showAplha": true,
+        "showAlpha": true,
         "spectrum": {
           "showInput": true,
           "showAlpha": true,
@@ -158,7 +158,7 @@
         "optional": true,
         "default": "#ffffff",
         "widget": "colorSelector",
-        "showAplha": true,
+        "showAlpha": true,
         "spectrum": {
           "showInput": true,
           "showAlpha": true,
@@ -193,7 +193,7 @@
         "optional": true,
         "default": "white",
         "widget": "colorSelector",
-        "showAplha": true,
+        "showAlpha": true,
         "spectrum": {
           "showInput": true,
           "showAlpha": true,
@@ -353,7 +353,7 @@
         "optional": true,
         "default": "#ffffff",
         "widget": "colorSelector",
-        "showAplha": true,
+        "showAlpha": true,
         "spectrum": {
           "showInput": true,
           "showAlpha": true,
