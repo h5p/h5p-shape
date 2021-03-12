@@ -38,8 +38,13 @@ H5P.Shape = (function ($) {
    */
   C.prototype.attach = function ($container) {
     this.$inner = $container.addClass('h5p-shape');
-    this.$shape = $('<div class="h5p-shape-element h5p-shape-' + this.params.type + '"></div>');
-    this.findTypeAndStyle();
+    if(this.isArrow()) {
+      this.createArrow();
+    }
+    else {
+      this.$shape = $('<div class="h5p-shape-element h5p-shape-' + this.params.type + '"></div>');
+      this.findTypeAndStyle();
+    }
     this.$shape.appendTo(this.$inner);
   };
 
@@ -53,18 +58,25 @@ H5P.Shape = (function ($) {
   };
 
   /**
-   * Is this a svg?
+   * Is this a svg-arrow?
    * @return {boolean}
    */
-  C.prototype.isSVG = function () {
+  C.prototype.isArrow = function () {
     return this.params.type === 'long-arrow-right' || 
            this.params.type === 'long-arrow-left' ||
            this.params.type === 'long-arrow-up' ||
            this.params.type === 'long-arrow-down' ||
            this.params.type === 'arrows-alt-h' ||
            this.params.type === 'arrows-alt-v' ||
-           this.params.type === 'arrows-alt' ||
-           this.params.type === 'triangle' ||
+           this.params.type === 'arrows-alt'
+  };
+
+  /**
+   * Is this a svg-geometry?
+   * @return {boolean}
+   */
+  C.prototype.isSVG = function () {
+    return this.params.type === 'triangle' ||
            this.params.type === 'pentagon' ||
            this.params.type === 'hexagon' ||
            this.params.type === 'cylinder' ||
@@ -84,6 +96,97 @@ H5P.Shape = (function ($) {
   }
 
   /**
+   * Create svg-arrow
+   */
+  C.prototype.createArrow = function () {
+
+    let rotation = '';
+    let color = '';
+    let returnShapeString = '';
+
+    // in case we only have one 'field' in the semantics, because then the colorSVG becomes a child of this.params.svg
+    if (typeof this.params.svg === 'string') {
+      color = this.params.svg;
+    } else {
+      color = this.params.svg.fillColor;
+    }
+
+    const arrowHeadRight = 
+    `<svg class="arrow-head" viewBox="0 0 20 40" preserveAspectRatio="xMaxYMid">
+    <polygon points="0,0 0,40 20,20" fill="${color}">
+    </polygon>
+    </svg>`;
+    const arrowHeadLeft = 
+    `<svg class="arrow-head" viewBox="0 0 20 40" preserveAspectRatio="xMinYMid">
+    <polygon points="0,20 20,40 20,0" fill="${color}">
+    </polygon>
+    </svg>`;
+    const arrowHeadUp = 
+    `<svg class="arrow-head" viewBox="0 0 40 20" preserveAspectRatio="xMidYMax">
+    <polygon points="0,20 40,20 20,0" fill="${color}">
+    </polygon>
+    </svg>`;
+    const arrowHeadDown = 
+    `<svg class="arrow-head" viewBox="0 0 40 20" preserveAspectRatio="xMidYMin">
+    <polygon points="0,0 40,0 20,20" fill="${color}">
+    </polygon>
+    </svg>`;
+    const middleHorizontal =
+    `<svg class="arrow-body" viewBox="0 0 1 40" preserveAspectRatio="none">
+    <rect x="0" y="17" width="1" height="6" fill="${color}"/>
+    </svg>`;
+    const middleVertical = 
+    `<svg class="arrow-body" viewBox="0 0 40 1" preserveAspectRatio="none">
+    <rect x="17" y="0" width="6" height="1" fill="${color}"/>
+    </svg>`;
+    
+
+    if(this.params.type === 'long-arrow-left' || this.params.type === 'long-arrow-right') {
+      if(this.params.type === 'long-arrow-left') {
+        rotation = `data-rotation="180"`;
+      }
+      returnShapeString = 
+      $(`<div class="h5p-shape-element h5p-shape-${this.params.type}">
+      <div class="arrow" ${rotation}>
+      ${middleHorizontal}
+      ${arrowHeadRight}
+      </div>
+      </div>`);
+    } else if(this.params.type === 'long-arrow-up' || this.params.type === 'long-arrow-down') {
+      if(this.params.type === 'long-arrow-down') {
+        rotation = `data-rotation="180"`;
+      }
+      returnShapeString = 
+      $(`<div class="h5p-shape-element h5p-shape-${this.params.type}">
+      <div class="arrow--vertical" ${rotation}>
+      ${arrowHeadUp}
+      ${middleVertical}
+      </div>
+      </div>`);
+    } else if(this.params.type === 'arrows-alt-h') {
+      returnShapeString = 
+      $(`<div class="h5p-shape-element h5p-shape-${this.params.type}">
+      <div class="arrow">
+      ${arrowHeadLeft}
+      ${middleHorizontal}
+      ${arrowHeadRight}
+      </div>
+      </div>`);
+    } else if(this.params.type === 'arrows-alt-v') {
+      returnShapeString = 
+      $(`<div class="h5p-shape-element h5p-shape-${this.params.type}">
+      <div class="arrow--vertical">
+      ${arrowHeadUp}
+      ${middleVertical}
+      ${arrowHeadDown}
+      </div>
+      </div>`);
+    }
+    
+    this.$shape = returnShapeString
+  };
+
+  /**
    * Style a svg
    */
   C.prototype.styleSVG = function () {
@@ -95,10 +198,8 @@ H5P.Shape = (function ($) {
       uri = this.styleSVGPolygon(thisType);
     } else if(thisType == 'cylinder' || thisType == 'cube' || thisType == 'cone') {
       uri = this.styleSVG3d(thisType); 
-    } else {
-      // all other svg's
-      uri = this.getSVGURI(thisType);
     }
+
       const encoded = encodeURIComponent(uri);
       const backgroundImage = `url("data:image/svg+xml;utf8,${encoded}")`;
       css['background-image'] = backgroundImage;
@@ -155,38 +256,6 @@ H5P.Shape = (function ($) {
     }
     if(type == 'hexagon') {
       returnURI = `<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 600 600"><polygon points="560,300 450,560 150,560 40,300 150,40 450,40" style="fill:${colorSVG};stroke:${borderColor};stroke-width:${borderWidth};${dashStyle};"/></svg>`
-    }
-    return returnURI;
-  }
-
-  /**
-   * Get SVG-URI for all other SVGs
-   */
-  C.prototype.getSVGURI = function(type) {
-    let returnURI = '';
-    let colorSVG;
-
-    // in case we only have one 'field' in the semantics, because then the colorSVG becomes a child of this.params.svg
-    if (typeof this.params.svg === 'string') {
-      colorSVG = this.params.svg;
-    } else {
-      colorSVG = this.params.svg.fillColor;
-    }
-
-    if (type == 'long-arrow-right') {
-      returnURI = `<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 140 450 230"><g fill="${colorSVG}"><path d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"/></g></svg>`
-    } else if (type == 'long-arrow-left') {
-      returnURI = `<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 140 450 230"><g fill="${colorSVG}"><path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"/></g></svg>`
-    } else if (type == 'long-arrow-up') {
-      returnURI = `<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="15 30 225 450"><g fill="${colorSVG}"><path d="M88 166.059V468c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12V166.059h46.059c21.382 0 32.09-25.851 16.971-40.971l-86.059-86.059c-9.373-9.373-24.569-9.373-33.941 0l-86.059 86.059c-15.119 15.119-4.411 40.971 16.971 40.971H88z"/></g></svg>`
-    } else if (type == 'long-arrow-down') {
-      returnURI = `<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="15 32 225 450"><g fill="${colorSVG}"><path d="M168 345.941V44c0-6.627-5.373-12-12-12h-56c-6.627 0-12 5.373-12 12v301.941H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.569 9.373 33.941 0l86.059-86.059c15.119-15.119 4.411-40.971-16.971-40.971H168z"/></g></svg>`
-    } else if (type == 'arrows-alt-h') {
-      returnURI = `<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 141 515 230"><g fill="${colorSVG}"><path d="M377.941 169.941V216H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.568 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296h243.882v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.568 0-33.941l-86.059-86.059c-15.119-15.12-40.971-4.412-40.971 16.97z"/></g></svg>`
-    } else if (type == 'arrows-alt-v') {
-      returnURI = `<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="17 0 225 513"><g fill="${colorSVG}"><path d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"/></g></svg>`
-    } else if (type == 'arrows-alt') {
-      returnURI = `<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 512 512"><g fill="${colorSVG}"><path d="M352.201 425.775l-79.196 79.196c-9.373 9.373-24.568 9.373-33.941 0l-79.196-79.196c-15.119-15.119-4.411-40.971 16.971-40.97h51.162L228 284H127.196v51.162c0 21.382-25.851 32.09-40.971 16.971L7.029 272.937c-9.373-9.373-9.373-24.569 0-33.941L86.225 159.8c15.119-15.119 40.971-4.411 40.971 16.971V228H228V127.196h-51.23c-21.382 0-32.09-25.851-16.971-40.971l79.196-79.196c9.373-9.373 24.568-9.373 33.941 0l79.196 79.196c15.119 15.119 4.411 40.971-16.971 40.971h-51.162V228h100.804v-51.162c0-21.382 25.851-32.09 40.97-16.971l79.196 79.196c9.373 9.373 9.373 24.569 0 33.941L425.773 352.2c-15.119 15.119-40.971 4.411-40.97-16.971V284H284v100.804h51.23c21.382 0 32.09 25.851 16.971 40.971z"/></g></svg>`
     }
     return returnURI;
   }

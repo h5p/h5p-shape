@@ -70,10 +70,6 @@
       {
         "value": "arrows-alt-v",
         "label": "Arrows up and down"
-      },
-      {
-        "value": "arrows-alt",
-        "label": "Arrows"
       }
     ],
     "default": "rectangle"
@@ -104,7 +100,7 @@
         "optional": true,
         "default": "#ffffff",
         "widget": "colorSelector",
-        "showAplha": true,
+        "showAlpha": true,
         "spectrum": {
           "showInput": true,
           "showAlpha": true,
@@ -117,9 +113,9 @@
         "label": "Border color",
         "importance": "medium",
         "optional": true,
-        "default": "#ffffff",
+        "default": "#000000",
         "widget": "colorSelector",
-        "showAplha": true,
+        "showAlpha": true,
         "spectrum": {
           "showInput": true,
           "showAlpha": true,
@@ -143,8 +139,7 @@
             "long-arrow-up",
             "long-arrow-down",
             "arrows-alt-h",
-            "arrows-alt-v",
-            "arrows-alt"
+            "arrows-alt-v"
           ]
         }
       ]
@@ -158,7 +153,7 @@
         "optional": true,
         "default": "#ffffff",
         "widget": "colorSelector",
-        "showAplha": true,
+        "showAlpha": true,
         "spectrum": {
           "showInput": true,
           "showAlpha": true,
@@ -193,7 +188,7 @@
         "optional": true,
         "default": "white",
         "widget": "colorSelector",
-        "showAplha": true,
+        "showAlpha": true,
         "spectrum": {
           "showInput": true,
           "showAlpha": true,
@@ -206,7 +201,7 @@
         "label": "Border color",
         "importance": "medium",
         "optional": true,
-        "default": "white",
+        "default": "#000000",
         "widget": "colorSelector",
         "spectrum": {
           "showInput": true,
@@ -353,7 +348,7 @@
         "optional": true,
         "default": "#ffffff",
         "widget": "colorSelector",
-        "showAplha": true,
+        "showAlpha": true,
         "spectrum": {
           "showInput": true,
           "showAlpha": true,
