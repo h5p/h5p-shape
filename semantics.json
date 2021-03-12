@@ -70,10 +70,6 @@
       {
         "value": "arrows-alt-v",
         "label": "Arrows up and down"
-      },
-      {
-        "value": "arrows-alt",
-        "label": "Arrows"
       }
     ],
     "default": "rectangle"
@@ -143,8 +139,7 @@
             "long-arrow-up",
             "long-arrow-down",
             "arrows-alt-h",
-            "arrows-alt-v",
-            "arrows-alt"
+            "arrows-alt-v"
           ]
         }
       ]
