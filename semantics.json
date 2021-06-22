@@ -102,9 +102,13 @@
         "widget": "colorSelector",
         "showAlpha": true,
         "spectrum": {
-          "showInput": true,
-          "showAlpha": true,
-          "preferredFormat": "rgb"
+          "showPalette": true,
+          "palette": [
+                ["#1d5cff", "black", "white", "gray"],
+                ["red", "blue", "yellow", "green"],
+                ["pink", "purple", "brown", "orange"],
+                ["lime", "violet", "magenta", "cyan"]
+            ]
         }
       },
       {
@@ -117,9 +121,13 @@
         "widget": "colorSelector",
         "showAlpha": true,
         "spectrum": {
-          "showInput": true,
-          "showAlpha": true,
-          "preferredFormat": "rgb"
+          "showPalette": true,
+          "palette": [
+                ["#1d5cff", "black", "white", "gray"],
+                ["red", "blue", "yellow", "green"],
+                ["pink", "purple", "brown", "orange"],
+                ["lime", "violet", "magenta", "cyan"]
+            ]
         }
       }
     ]
@@ -155,9 +163,13 @@
         "widget": "colorSelector",
         "showAlpha": true,
         "spectrum": {
-          "showInput": true,
-          "showAlpha": true,
-          "preferredFormat": "rgb"
+          "showPalette": true,
+          "palette": [
+                ["#1d5cff", "black", "white", "gray"],
+                ["red", "blue", "yellow", "green"],
+                ["pink", "purple", "brown", "orange"],
+                ["lime", "violet", "magenta", "cyan"]
+            ]
         }
       }
     ]
@@ -190,9 +202,13 @@
         "widget": "colorSelector",
         "showAlpha": true,
         "spectrum": {
-          "showInput": true,
-          "showAlpha": true,
-          "preferredFormat": "rgb"
+          "showPalette": true,
+          "palette": [
+                ["#1d5cff", "black", "white", "gray"],
+                ["red", "blue", "yellow", "green"],
+                ["pink", "purple", "brown", "orange"],
+                ["lime", "violet", "magenta", "cyan"]
+            ]
         }
       },
       {
@@ -204,9 +220,13 @@
         "default": "#000000",
         "widget": "colorSelector",
         "spectrum": {
-          "showInput": true,
-          "showAlpha": true,
-          "preferredFormat": "rgb"
+          "showPalette": true,
+          "palette": [
+                ["#1d5cff", "black", "white", "gray"],
+                ["red", "blue", "yellow", "green"],
+                ["pink", "purple", "brown", "orange"],
+                ["lime", "violet", "magenta", "cyan"]
+            ]
         }
       },
       {
@@ -350,9 +370,13 @@
         "widget": "colorSelector",
         "showAlpha": true,
         "spectrum": {
-          "showInput": true,
-          "showAlpha": true,
-          "preferredFormat": "rgb"
+          "showPalette": true,
+          "palette": [
+                ["#1d5cff", "black", "white", "gray"],
+                ["red", "blue", "yellow", "green"],
+                ["pink", "purple", "brown", "orange"],
+                ["lime", "violet", "magenta", "cyan"]
+            ]
         }
       },
       {
@@ -364,9 +388,13 @@
         "default": "#000000",
         "widget": "colorSelector",
         "spectrum": {
-          "showInput": true,
-          "showAlpha": true,
-          "preferredFormat": "rgb"
+          "showPalette": true,
+          "palette": [
+                ["#1d5cff", "black", "white", "gray"],
+                ["red", "blue", "yellow", "green"],
+                ["pink", "purple", "brown", "orange"],
+                ["lime", "violet", "magenta", "cyan"]
+            ]
         }
       },
       {
@@ -644,9 +672,13 @@
         "default": "#000000",
         "widget": "colorSelector",
         "spectrum": {
-          "showInput": true,
-          "showAlpha": true,
-          "preferredFormat": "rgb"
+          "showPalette": true,
+          "palette": [
+                ["#1d5cff", "black", "white", "gray"],
+                ["red", "blue", "yellow", "green"],
+                ["pink", "purple", "brown", "orange"],
+                ["lime", "violet", "magenta", "cyan"]
+            ]
         }
       },
       {
