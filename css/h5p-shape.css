@@ -28,3 +28,27 @@
 .h5p-shape-element.h5p-border-double {
   border-style: double;
 }
+
+.arrow {
+  display: flex;
+  height: 100%;
+}
+
+.arrow[data-rotation="180"] { 
+  transform: rotate(180deg); 
+}
+
+.arrow-body {
+  flex-grow: 1;
+}
+
+.arrow--vertical {
+  flex-direction: column;
+  display: flex;
+  height: 100%;
+}
+
+.arrow--vertical[data-rotation="180"] {
+   transform: rotate(180deg); 
+  }
+
