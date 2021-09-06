@@ -1,5 +1,5 @@
 {
-  "title": "Shapes",
+  "title": "NDLA Shapes",
   "description": "Makes it possible to create different shapes.",
   "majorVersion": 1,
   "minorVersion": 1,
@@ -7,7 +7,7 @@
   "runnable": 0,
   "author": "Joubel",
   "license": "MIT",
-  "machineName": "H5P.Shape",
+  "machineName": "H5P.NDLAShape",
   "metadataSettings": {
     "disable": 1,
     "disableExtraTitleField": 1
@@ -24,7 +24,7 @@
   ],
   "editorDependencies": [
     {
-      "machineName": "H5PEditor.Shape",
+      "machineName": "H5PEditor.NDLAShape",
       "majorVersion": 1,
       "minorVersion": 1
     },
@@ -34,7 +34,7 @@
       "minorVersion": 2
     },
     {
-      "machineName": "H5PEditor.ShowWhen",
+      "machineName": "H5PEditor.NDLAShowWhen",
       "majorVersion": 1,
       "minorVersion": 0
     }

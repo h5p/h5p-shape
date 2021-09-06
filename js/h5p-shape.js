@@ -5,7 +5,7 @@ var H5P = H5P || {};
  *
  * @param {jQuery} $
  */
-H5P.Shape = (function ($) {
+H5P.NDLAShape = (function ($) {
   /**
    * Initialize module.
    *
