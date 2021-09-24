@@ -207,7 +207,7 @@ H5P.NDLAShape = (function ($) {
     }
 
     const encoded = encodeURIComponent(uri);
-    const backgroundImage = `url('data:image/svg+xml;utf8,${encoded}')`;
+    const backgroundImage = `url("data:image/svg+xml;utf8,${encoded}")`;
     css['background-image'] = backgroundImage;
     css['background-size'] = 'cover';
 
