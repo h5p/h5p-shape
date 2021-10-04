@@ -102,14 +102,14 @@ H5P.NDLAShape = (function ($) {
   C.prototype.createArrow = function () {
 
     let rotation = '';
-    let color = '';
+    let color = '#000';
     let returnShapeString = '';
 
     // in case we only have one 'field' in the semantics, because then the colorSVG becomes a child of this.params.svg
     if (typeof this.params.svg === 'string') {
       color = this.params.svg;
     }
-    else {
+    else if (this.params.svg) {
       color = this.params.svg.fillColor;
     }
 
