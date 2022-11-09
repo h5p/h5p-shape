@@ -201,17 +201,19 @@ H5P.NDLAShape = (function ($) {
 
     if (type === 'triangle' || type === 'pentagon' || type === 'hexagon') {
       uri = this.styleSVGPolygon(type);
-    }
+      const $svg = $(uri);
+      $svg.appendTo(this.$shape);
+    } 
     else if (type === 'cylinder' || type === 'cube' || type === 'cone') {
-      uri = this.styleSVG3d(type); 
+      uri = this.styleSVG3d(type);
+
+      const encoded = encodeURIComponent(uri);
+      const backgroundImage = `url("data:image/svg+xml;utf8,${encoded}")`;
+      css['background-image'] = backgroundImage;
+      css['background-size'] = 'cover';
+
+      this.$shape.css(css);
     }
-
-    const encoded = encodeURIComponent(uri);
-    const backgroundImage = `url("data:image/svg+xml;utf8,${encoded}")`;
-    css['background-image'] = backgroundImage;
-    css['background-size'] = 'cover';
-
-    this.$shape.css(css);
   };
 
   /**
