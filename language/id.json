@@ -1,0 +1,87 @@
+{
+  "semantics": [
+    {
+      "label": "Jenis",
+      "options": [
+        {
+          "label": "Persegi panjang"
+        },
+        {
+          "label": "Lingkaran"
+        },
+        {
+          "label": "Garis vertikal"
+        },
+        {
+          "label": "Garis horizontal"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "label": "Warna isi"
+        },
+        {
+          "label": "Warna batas"
+        },
+        {
+          "label": "Lebar batas"
+        },
+        {
+          "label": "Gaya batas",
+          "options": [
+            {
+              "label": "Padat"
+            },
+            {
+              "label": "Bertitik"
+            },
+            {
+              "label": "Putus-putus"
+            },
+            {
+              "label": "Ganda"
+            },
+            {
+              "label": "Dalam"
+            },
+            {
+              "label": "Luar"
+            }
+          ]
+        },
+        {
+          "label": "Radius batas"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "label": "Warna garis"
+        },
+        {
+          "label": "Lebar garis"
+        },
+        {
+          "label": "Gaya garis",
+          "options": [
+            {
+              "label": "Padat"
+            },
+            {
+              "label": "Bertitik"
+            },
+            {
+              "label": "Putus-putus"
+            },
+            {
+              "label": "Ganda"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
