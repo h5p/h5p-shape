@@ -1,0 +1,87 @@
+{
+  "semantics": [
+    {
+      "label": "Tipo",
+      "options": [
+        {
+          "label": "Retângulo"
+        },
+        {
+          "label": "Círculo"
+        },
+        {
+          "label": "Linha vertical"
+        },
+        {
+          "label": "Linha horizontal"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "label": "Cor de preenchimento"
+        },
+        {
+          "label": "Cor da borda"
+        },
+        {
+          "label": "Espessura da borda"
+        },
+        {
+          "label": "Estilo da borda",
+          "options": [
+            {
+              "label": "Sólida"
+            },
+            {
+              "label": "Pontilhada"
+            },
+            {
+              "label": "Tracejada"
+            },
+            {
+              "label": "Dupla"
+            },
+            {
+              "label": "Rebaixada (inset)"
+            },
+            {
+              "label": "Elevada (outset)"
+            }
+          ]
+        },
+        {
+          "label": "Raio do canto"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "label": "Cor da linha"
+        },
+        {
+          "label": "Espessura da linha"
+        },
+        {
+          "label": "Estilo da linha",
+          "options": [
+            {
+              "label": "Sólida"
+            },
+            {
+              "label": "Pontilhada"
+            },
+            {
+              "label": "Tracejada"
+            },
+            {
+              "label": "Dupla"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
